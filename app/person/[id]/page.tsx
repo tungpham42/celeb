@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       openGraph: {
         title: `${person.name} - Profile`,
         description: person.biography?.slice(0, 160),
+        siteName: "Celebrity Finder",
+        url: `https://celeb.soft.io.vn/person/${id}`,
+        type: "profile",
       },
     };
   } catch (error) {

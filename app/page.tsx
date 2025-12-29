@@ -35,6 +35,8 @@ export async function generateMetadata({
           height: 630,
         },
       ],
+      url: "https://celeb.soft.io.vn/",
+      type: "website",
     },
   };
 }
