@@ -1,5 +1,7 @@
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import { ConfigProvider } from "antd";
+import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,6 +11,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="adsense-script"
+          async
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3585118770961536`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>
           <ConfigProvider
@@ -37,6 +48,7 @@ export default function RootLayout({
             {children}
           </ConfigProvider>
         </StyledComponentsRegistry>
+        <GoogleAnalytics ga_id="G-HHXZSNQ65X" />
       </body>
     </html>
   );
