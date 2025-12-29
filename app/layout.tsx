@@ -1,8 +1,15 @@
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import { ConfigProvider } from "antd";
+import { Metadata } from "next";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://celeb.soft.io.vn"), // Crucial for OpenGraph
+  title: "Celebrity Finder",
+  description: "Find your favorite stars",
+};
 
 export default function RootLayout({
   children,
