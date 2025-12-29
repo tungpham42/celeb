@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  --background: #fdfbf7; /* Warm off-white, not harsh white */
+  --foreground: #2d2d2d; /* Soft black */
+  --primary: #8b5cf6; /* Friendly purple */
+  --secondary: #fbbf24; /* Playful yellow */
+  --card-bg: #ffffff;
+  --radius: 24px; /* Super rounded corners */
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05),
+    0 8px 10px -6px rgb(0 0 0 / 0.01);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Lexend Deca", sans-serif; /* The star of the show */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar for a polished feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* Ant Design Overrides for that "Cozy" look */
+.ant-card {
+  border-radius: var(--radius) !important;
+  border: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+}
+
+.ant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.ant-btn-primary {
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39) !important;
+}
+
+.ant-tag {
+  border-radius: 12px !important;
+  border: none !important;
+  padding: 4px 12px !important;
+  font-weight: 600;
+}
