@@ -1,14 +1,13 @@
 import { Metadata } from "next";
 import PersonPage from "@/components/Person";
-import { getCelebrityDetail, getOpenGraphImage } from "@/lib/api";
+import { getCelebrityDetail } from "@/lib/api";
 
 export const revalidate = 86400;
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-// 1. ADD DYNAMIC METADATA
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
 
@@ -23,14 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       openGraph: {
         title: `${person.name} - Profile`,
         description: person.biography?.slice(0, 160),
-        images: [
-          {
-            url: getOpenGraphImage(person.profile_path),
-            width: 1200,
-            height: 630,
-            alt: person.name,
-          },
-        ],
       },
     };
   } catch (error) {
